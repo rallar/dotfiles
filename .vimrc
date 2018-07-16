@@ -1,8 +1,10 @@
-" vimrc for Ralf Allar
+" ----------------------------------------------
+" my vimrc - Ralf Allar
+" feel free to use; comments are welcome
+" ----------------------------------------------
 "
 " set nocompatible to vi (so vim improvements are not turned off)
-" could be useless, since this option is set when vim finds a .vimrc file
-" automatically
+" could be useless, since this option is set when vim finds a .vimrc file automatically
 set nocompatible
 
 " Help
@@ -52,9 +54,7 @@ set encoding=utf8
 
 set ffs=unix,dos,mac
 
-" no swapfile, etc. //  sometimes I turned it off when it annoyes me and then
-" I turn it on again when I want to have that semaphore
-"
+" no swapfile, etc. //  sometimes I turn it off when it annoyes me and then I turn it on again when I want to have that semaphore
 " set noswapfile
 set directory=$HOME/.vim/swp//   " copy all swp files to the same directoryset nobackup
 set nowb
