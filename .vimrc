@@ -1,4 +1,4 @@
-" ----------------------------------------------
+  
 " my vimrc - Ralf Allar
 " feel free to use; comments are welcome
 " ----------------------------------------------
@@ -12,7 +12,7 @@ set wildmenu          " tab complete in the command line
 
 " Visual
 "
-colorscheme blue 
+colorscheme industry 
 set background=dark   " Use colors which match a dark background
 set title             " show title in window
 set showcmd           " Show incomplete commands at the bottom.
@@ -56,7 +56,9 @@ set ffs=unix,dos,mac
 
 " no swapfile, etc. //  sometimes I turn it off when it annoyes me and then I turn it on again when I want to have that semaphore
 " set noswapfile
-set directory=$HOME/.vim/swp//   " copy all swp files to the same directoryset nobackup
+set directory=.,$TEMP " copy all swp files to the same directoryset nobackup
+" set directory=$HOME/.vim/swp//   " copy all swp files to the same directoryset nobackup
+
 set nowb
 
 " Tabs
