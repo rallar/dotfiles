@@ -12,5 +12,8 @@ alias c=clear
 alias h=history
 
 # change prompt
-#export PS1='\033[0;94m\]\!\[\033[0m\] \u:\[\033[0;32m\]\W\[\033[0m\]$ '
-export PS1='\e[34m\! \e[30m\u:\e[32m\W\e[30m\$ '
+export PS1='\033[0;94m\]\!\[\033[0m\] \u:\[\033[0;32m\]\W\[\033[0m\]$ '
+#export PS1="\e[34m\! \e[30m\u:\e[32m\W\e[30m\$ "
+
+# vi style bash
+set -o vi
