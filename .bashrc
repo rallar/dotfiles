@@ -6,7 +6,7 @@ export PATH="$PATH:~/bin"
 
 # alias
 alias l='ls -AlhGF'
-alias ll='ls -lAhG'
+alias ll='ls -AhG'
 
 alias c=clear
 alias h=history
