@@ -1,4 +1,3 @@
-  
 " my vimrc - Ralf Allar
 " feel free to use; comments are welcome
 " ----------------------------------------------
@@ -15,7 +14,7 @@ set wildmenu          " tab complete in the command line
 colorscheme industry 
 set background=dark   " Use colors which match a dark background
 set title             " show title in window
-set showcmd           " Show incomplete commands at the bottom.
+set showcmd           " Show complete commands at the bottom.
 
 " Status line
 set laststatus=2      " show statusline even with only one buffer
@@ -39,26 +38,27 @@ set hlsearch          " highlight searches
 nmap <silent>  <BS>  :nohlsearch<CR>
 
 " show current position
-" set ruler
+ set ruler
 
 " enable syntax highlighting
 syntax enable
 
-" enable mouse
-set mouse=a
+" dis/enable mouse (uncomment for mouse support)
+" set mouse=a
 
 set number            " show line numbers
 set relativenumber    " show relative line numbers
 
 set encoding=utf8
+set linebreak         " don't break in the middle of words
+set scrolloff=3       " number of screenlines above/below the cursor
+set sidescrolloff=5   " number of columns top left/right of cursor
 
 set ffs=unix,dos,mac
 
 " no swapfile, etc. //  sometimes I turn it off when it annoyes me and then I turn it on again when I want to have that semaphore
-" set noswapfile
-set directory=.,$TEMP " copy all swp files to the same directoryset nobackup
-" set directory=$HOME/.vim/swp//   " copy all swp files to the same directoryset nobackup
-
+set noswapfile
+set nobackup
 set nowb
 
 " Tabs
@@ -72,8 +72,8 @@ set expandtab         " on pressing tab, insert spaces
 set smarttab          " when on, a <tab> in front of a line inserts blanks according to 'shiftwidth'
 
 set autoindent        " new lines inherit the indention from previous lines 
-set si "Smart indent
-set wrap "Wrap lines
+set si                "Smart indent
+set nowrap            "Wrap lines
 
 " Abbreviations
 ab vgr Viele Grüße,<CR>Ralf Allar
