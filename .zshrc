@@ -18,7 +18,7 @@ alias ld='ls -ldGh  */'
 alias c=clear
 alias h=history
 
-#force_color_prompt=yes
+force_color_prompt=yes
 prompt_symbol=💥
 # Skull emoji for root terminal
 [ "$EUID" -eq 0 ] && prompt_symbol=💀
@@ -59,7 +59,6 @@ bindkey ' ' magic-space
 
 # force zsh to show the complete history
 alias history="history 0"
-
 
 # Plugins 
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
