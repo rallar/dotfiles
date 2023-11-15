@@ -5,21 +5,31 @@
 neofetch
 
 # add own path
-# export PATH="$PATH:/Users/ralf/bin:/opt/metasploit-framework/bin/"
-export PATH="$PATH:/Users/ralf/bin"
+# export PATH="$PATH:/Users/rallar/bin"
 
 # Variables
-export ZSH=$HOME/.zsh
+# export ZSH=$HOME/.zsh
 
 # alias
-alias l='ls -AlhGF'
-alias ll='ls -lhG'
-alias ld='ls -ldGh  */'
+alias l='ls -AlhF --color'
+alias ll='ls -lhG --color'
+alias ld='ls -ldh'
 alias c=clear
 alias h=history
 
-force_color_prompt=yes
-prompt_symbol=💥
+alias vim=nvim
+
+# prompt
+#force_color_prompt=yes
+if [[ $OSTYPE -eq "linux-gnu" ]]
+
+then
+    prompt_symbol=@
+else
+    prompt_symbol=💥    
+fi
+
+
 # Skull emoji for root terminal
 [ "$EUID" -eq 0 ] && prompt_symbol=💀
 PROMPT=$'%F{%(#.blue.green)}┌──(%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
