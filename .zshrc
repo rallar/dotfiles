@@ -21,7 +21,7 @@ alias vim=nvim
 
 # prompt
 #force_color_prompt=yes
-if [[ "$OSTYPE" -eq "linux-gnu" ]]
+if [[ "$OSTYPE" == "linux-gnu" ]]
 
 then
     prompt_symbol=@
