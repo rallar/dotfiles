@@ -8,7 +8,7 @@ neofetch
 # export PATH="$PATH:/Users/rallar/bin"
 
 # Variables
-# export ZSH=$HOME/.zsh
+export ZSH=$HOME/.zsh
 
 # alias
 alias l='ls -AlhF --color'
@@ -72,7 +72,3 @@ alias history="history 0"
 
 # Plugins 
 source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
-# add the function to the file search path 
-# fpath=($ZSH/plugins/zsh-completions/src $fpath)
-
-
