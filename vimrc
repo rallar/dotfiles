@@ -45,7 +45,7 @@ set hlsearch          " highlight searches
 nmap <silent>  <BS>  :nohlsearch<CR>
 
 " show current position
- set ruler
+set ruler
 
 " enable syntax highlighting
 syntax on
@@ -58,7 +58,7 @@ set relativenumber    " show relative line numbers
 
 set encoding=utf8
 set linebreak         " don't break in the middle of words
-set scrolloff=999     " number of screenlines above/below the cursor (with 999 is the cursor always in the middle)
+set scrolloff=3     " number of screenlines above/below the cursor (with 999 is the cursor always in the middle)
 set sidescrolloff=5   " number of columns top left/right of cursor
 
 set ffs=unix,dos,mac
