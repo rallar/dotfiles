@@ -66,11 +66,8 @@ else
 fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# vi style bash
-set -o vi
-# configure key keybindings
-# vim key bindings (bash)
-# bindkey -v
+# vi style keybindings for zsh
+bindkey -v
 # do history expansion on space
 bindkey ' ' magic-space
 
