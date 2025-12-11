@@ -2,7 +2,8 @@
 # echo ".zshrc called for non login shells"
 # show a fancy status screen at the top of a new shell
 # config is in .config/neofetch/config.conf
-neofetch
+# Only run neofetch in login shells to improve startup performance
+[[ -o login ]] && neofetch
 
 # add own path
 # export PATH="$PATH:/Users/rallar/bin"
