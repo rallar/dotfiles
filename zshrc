@@ -57,7 +57,13 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups  
 
 # tab completion incasesensitive
-autoload -U compinit && compinit
+# Cache completion for better performance (regenerate once per 24h)
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # vi style bash
