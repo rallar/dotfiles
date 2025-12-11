@@ -70,5 +70,11 @@ bindkey ' ' magic-space
 # force zsh to show the complete history
 alias history="history 0"
 
-# Plugins 
-source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Plugins
+# Load zsh-autosuggestions only if it exists
+if [[ -f $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  echo "Warning: zsh-autosuggestions not found at $ZSH/zsh-autosuggestions/"
+  echo "Install with: git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH/zsh-autosuggestions"
+fi
