@@ -77,8 +77,25 @@ set shiftwidth=2      " this is how far text is intended with << and >>
 set expandtab         " on pressing tab, insert spaces
 set smarttab          " when on, a <tab> in front of a line inserts blanks according to 'shiftwidth'
 
-set autoindent        " new lines inherit the indention from previous lines 
+set autoindent        " new lines inherit the indention from previous lines
 set nowrap            "Wrap lines
+
+" Performance
+set updatetime=300    " Faster completion and better user experience
+
+" Persistent undo
+set undofile          " Enable persistent undo
+set undodir=~/.vim/undo " Directory for undo files
+set undolevels=1000   " Maximum number of changes that can be undone
+set undoreload=10000  " Maximum number of lines to save for undo on buffer reload
+
+" System clipboard integration
+if has('clipboard')
+  set clipboard=unnamedplus " Use system clipboard for yank/paste
+endif
+
+" Visual feedback
+set signcolumn=yes    " Always show sign column to avoid text shifting
 
 " Abbreviations
 " ab vgr Viele Grüße,<CR>Ralf Allar

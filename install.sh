@@ -18,6 +18,13 @@ echo "  ~/.bashrc -> $DOTFILES_DIR/bashrc"
 echo "  ~/.vimrc -> $DOTFILES_DIR/vimrc"
 echo "  ~/.tmux.conf -> $DOTFILES_DIR/tmux.conf"
 
+# Create vim undo directory
+if [[ ! -d "$HOME/.vim/undo" ]]; then
+  mkdir -p "$HOME/.vim/undo"
+  echo ""
+  echo "✓ Created vim undo directory: ~/.vim/undo"
+fi
+
 # Check for zsh-autosuggestions
 if [[ ! -d "$HOME/.zsh/zsh-autosuggestions" ]]; then
   echo ""
