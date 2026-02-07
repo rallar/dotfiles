@@ -14,14 +14,14 @@ ln -sf "$DOTFILES_DIR/tmux.conf" "$HOME/.tmux.conf"
 
 # Neovim config
 mkdir -p "$HOME/.config/nvim"
-ln -sf "$DOTFILES_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+ln -sf "$DOTFILES_DIR/init.lua" "$HOME/.config/nvim/init.lua"
 
 echo "✓ Symlinks created:"
 echo "  ~/.zshrc -> $DOTFILES_DIR/zshrc"
 echo "  ~/.bashrc -> $DOTFILES_DIR/bashrc"
 echo "  ~/.vimrc -> $DOTFILES_DIR/vimrc"
 echo "  ~/.tmux.conf -> $DOTFILES_DIR/tmux.conf"
-echo "  ~/.config/nvim/init.lua -> $DOTFILES_DIR/nvim/init.lua"
+echo "  ~/.config/nvim/init.lua -> $DOTFILES_DIR/init.lua"
 
 # Create vim undo directory
 if [[ ! -d "$HOME/.vim/undo" ]]; then
