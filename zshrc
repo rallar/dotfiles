@@ -2,10 +2,10 @@
 # echo ".zshrc called for non login shells"
 # show a fancy status screen at the top of a new shell
 # config is in .config/neofetch/config.conf
-# Only run neofetch once per session to improve startup performance
-if [[ -z "$NEOFETCH_SHOWN" ]]; then
-  export NEOFETCH_SHOWN=1
-  neofetch
+# Only run fastfetch once per session to improve startup performance
+if [[ -z "$FASTFETCH_SHOWN" ]]; then
+  export FASTFETCH_SHOWN=1
+  fastfetch
 fi
 
 # add own path
