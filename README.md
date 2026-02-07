@@ -5,7 +5,8 @@ Simple, clean dotfiles for terminal productivity with vim, tmux, and zsh.
 
 ## Features
 
-- **Vim**: Modern configuration with syntax highlighting, line numbers, smart indentation
+- **Neovim**: Modern Lua config with lazy.nvim plugin manager, ready for LSP
+- **Vim**: Configuration with syntax highlighting, line numbers, smart indentation
 - **Tmux**: Gruvbox-themed status bar with mouse support and 256-color terminal
 - **Zsh**: Custom prompt, vi-mode, intelligent history management, tab completion caching
 - **Bash**: Minimal fallback configuration with vi-mode
@@ -24,7 +25,7 @@ The install script creates symlinks from your home directory to the dotfiles.
 
 - **Zsh** (recommended shell)
 - **Neovim** (aliased as `vim` in zshrc)
-- **Neofetch** (optional, for system info display)
+- **Fastfetch** (optional, for system info display)
 - **Tmux** (for terminal multiplexing)
 
 ### Optional Plugins
@@ -38,6 +39,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 
 | Tool | Config File | Description |
 |------|-------------|-------------|
+| Neovim | `init.lua` | Lua config, lazy.nvim bootstrap, industry colorscheme |
 | Vim | `vimrc` | 2-space tabs, UTF-8, industry colorscheme |
 | Tmux | `tmux.conf` | Gruvbox theme, mouse enabled, custom status bar |
 | Zsh | `zshrc` | Vi-mode, smart history, case-insensitive completion |
@@ -45,8 +47,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 
 ## Key Features
 
+### Neovim
+- Lua-based config (init.lua)
+- lazy.nvim plugin manager (bootstraps on first start)
+- Same base settings as Vim config
+- Ready for LSP plugin setup
+
 ### Vim
-- Vi-compatible mode disabled for modern features
 - Relative line numbers
 - Smart case-insensitive search
 - No backup files, swap files enabled
@@ -64,7 +71,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 - History: 5000 entries with deduplication
 - Case-insensitive tab completion with caching
 - OS-specific prompt symbols
-- Neofetch runs once per session
+- Fastfetch runs once per session
 
 ## Author
 
