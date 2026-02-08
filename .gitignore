@@ -1,3 +1,12 @@
+# Vim/Neovim
+*.swp
+*.swo
+*~
+tags
+
+# lazy.nvim
+lazy-lock.json
+
 # macOS
 .DS_Store
 .AppleDouble
