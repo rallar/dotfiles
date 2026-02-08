@@ -110,4 +110,11 @@ require("lazy").setup({
       })
     end,
   },
+}, {
+  -- Treesitter parser path (Debian/Kali packaged parsers)
+  performance = {
+    rtp = {
+      paths = { "/usr/lib/nvim" },
+    },
+  },
 })
