@@ -5,7 +5,7 @@ Simple, clean dotfiles for terminal productivity with vim, tmux, and zsh.
 
 ## Features
 
-- **Neovim**: Lua config with lazy.nvim, LSP (clangd, gopls, pyright), and autocomplete (nvim-cmp)
+- **Neovim**: Lua config with native LSP (clangd, gopls, pyright) and autocomplete (nvim-cmp)
 - **Vim**: Configuration with syntax highlighting, line numbers, smart indentation
 - **Tmux**: Gruvbox-themed status bar with mouse support and 256-color terminal
 - **Zsh**: Custom prompt, vi-mode, intelligent history management, tab completion caching
@@ -44,7 +44,7 @@ The PowerShell script:
 ## Prerequisites
 
 - **Zsh** (recommended shell, Linux/macOS)
-- **Neovim** (aliased as `vim` in zshrc)
+- **Neovim 0.11+** (aliased as `vim` in zshrc)
 - **Fastfetch** (optional, for system info display)
 - **Tmux** (for terminal multiplexing)
 
@@ -60,7 +60,7 @@ The PowerShell script:
 
 | Tool | Config File | Description |
 |------|-------------|-------------|
-| Neovim | `init.lua` | Lua config, lazy.nvim, LSP + autocomplete |
+| Neovim | `init.lua` | Lua config, lazy.nvim, native LSP + autocomplete |
 | Vim | `vimrc` | 2-space tabs, UTF-8, industry colorscheme |
 | Tmux | `tmux.conf` | Gruvbox theme, mouse enabled, custom status bar |
 | Zsh | `zshrc` | Vi-mode, smart history, case-insensitive completion |
@@ -69,9 +69,9 @@ The PowerShell script:
 ## Key Features
 
 ### Neovim
-- Lua-based config (init.lua)
+- Lua-based config (init.lua), requires Neovim 0.11+
 - lazy.nvim plugin manager (bootstraps on first start)
-- LSP support: clangd (C/C++), gopls (Go), pyright (Python)
+- Native LSP via `vim.lsp.config()` / `vim.lsp.enable()`: clangd (C/C++), gopls (Go), pyright (Python)
 - Autocomplete via nvim-cmp with LSP and buffer sources
 - LSP keymaps: `gd` (definition), `gr` (references), `K` (hover), `<leader>rn` (rename), `<leader>ca` (code action)
 
