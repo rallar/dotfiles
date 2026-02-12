@@ -1,7 +1,7 @@
 -- Neovim config - Ralf Allar
 --
--- Schlanke Lua-Config basierend auf der vimrc.
--- Settings die in Neovim bereits Default sind wurden weggelassen.
+-- small Lua-Config based on the vimrc.
+-- default neovim settings were deleted
 -- -----------------------------------------------
 
 -- Visual
@@ -13,9 +13,10 @@ vim.opt.title = true
 vim.opt.statusline = "%F%m%r%h%w%=(%{&ff}/%Y) (line %l/%L, col %c)"
 
 -- Wildmenu
+-- tab completion shows all results
 vim.opt.wildmode = "full"
 
--- Search
+-- Search (ignore case if no upper case in the search)
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
@@ -53,7 +54,7 @@ vim.opt.undofile = true
 vim.opt.undolevels = 1000
 vim.opt.undoreload = 10000
 
--- System clipboard
+-- System clipboard (use system clipboard)
 vim.opt.clipboard = "unnamedplus"
 
 -- lazy.nvim Bootstrap
@@ -74,7 +75,7 @@ vim.lsp.config("gopls", {})      -- Go
 vim.lsp.config("pyright", {})    -- Python
 vim.lsp.enable({ "clangd", "gopls", "pyright" })
 
--- LSP Keymaps (nur aktiv wenn ein LSP-Server laeuft)
+-- LSP Keymaps (only when LSP active)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf }
