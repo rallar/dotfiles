@@ -5,9 +5,14 @@
 -- -----------------------------------------------
 
 -- Visual
+vim.opt.termguicolors = true
 vim.cmd.colorscheme("industry")
 vim.opt.background = "dark"
 vim.opt.title = true
+
+-- open new windows right and below
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Status line
 vim.opt.statusline = "%F%m%r%h%w%=(%{&ff}/%Y) (line %l/%L, col %c)"
@@ -48,7 +53,6 @@ vim.opt.expandtab = true
 
 -- Performance
 vim.opt.updatetime = 300
-
 -- Persistent undo (undodir bleibt Neovim-Default: ~/.local/state/nvim/undo)
 vim.opt.undofile = true
 vim.opt.undolevels = 1000
@@ -73,7 +77,15 @@ vim.opt.rtp:prepend(lazypath)
 vim.lsp.config("clangd", {})     -- C/C++
 vim.lsp.config("gopls", {})      -- Go
 vim.lsp.config("pyright", {})    -- Python
-vim.lsp.enable({ "clangd", "gopls", "pyright" })
+vim.lsp.config("lua_ls", {       -- Lua
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      workspace = { library = { vim.env.VIMRUNTIME } },
+    },
+  },
+})
+vim.lsp.enable({ "clangd", "gopls", "pyright", "lua_ls" })
 
 -- LSP Keymaps (only when LSP active)
 vim.api.nvim_create_autocmd("LspAttach", {
