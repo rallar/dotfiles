@@ -9,6 +9,7 @@ vim.opt.termguicolors = true
 vim.cmd.colorscheme("industry")
 vim.opt.background = "dark"
 vim.opt.title = true
+vim.opt.showcmd = true
 
 -- open new windows right and below
 vim.opt.splitright = true

@@ -1,51 +1,67 @@
+"
 " my vimrc - Ralf Allar
-" 
-" feel free to use; comments are welcome
-" ----------------------------------------------
+"
 
 
-" set nocompatible to vi (so vim improvements are not turned off)
-" could be useless, since this option is set when vim finds a .vimrc file automatically
+" disable vi compatibility mode (redundant when .vimrc exists, but explicit)
 set nocompatible
+" disable modelines for security (prevent files from injecting vim settings)
+set nomodeline
 
 " Help
 " tab complete in the command line
 set wildmenu
 
-"set wildmode=longest:full,full
+" show all matches immediately on tab
 set wildmode=full
 
 
 " Visual
 "
-colorscheme industry 
-set background=dark   " Use colors which match a dark background
-set title             " show title in window
-set showcmd           " Show complete commands at the bottom.
+" use the industry color scheme
+colorscheme industry
+" dark background for correct color matching
+set background=dark
+" show file name in the terminal window title
+set title
+" show partial commands in the bottom right while typing
+set showcmd
 
 " Status line
-set laststatus=2      " show statusline even with only one buffer
+" always show the status line, even with a single buffer
+set laststatus=2
+" status line: full path, flags, file format, type, line/total, column
 set statusline =%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 
 "set cursorline       " show a line at cursor position
 
-set backspace=indent,eol,start " Allow backspacing over indention, line breaks and insertion start.
+" allow backspace over indentation, line breaks, and insert start
+set backspace=indent,eol,start
 
 " Enable filetype plugins
 filetype plugin on
-filetype indent on    " enable indenting for files (language specific)
+" enable indenting for files (language specific)
+filetype indent on
+
+" briefly jump to matching bracket when closing one is inserted
+set showmatch
+" duration of the bracket match highlight in tenths of a second
+set matchtime=2
 
 " search options
-set incsearch         " find the next match when typing
-set ignorecase        " ignore case when searching
-set smartcase         " except when typing a capital letter
-set hlsearch          " highlight searches
+" highlight search matches as you type
+set incsearch
+" ignore case when searching
+set ignorecase
+" override ignorecase when search contains uppercase letters
+set smartcase
+" keep matches highlighted after search
+set hlsearch
 
-" Make delete key in Normal mode remove the persistently highlighted matches
+" clear search highlighting with Backspace
 nmap <silent>  <BS>  :nohlsearch<CR>
 
-" show current position
-set ruler
+" set ruler  " redundant with statusline
 
 " enable syntax highlighting
 syntax on
@@ -53,49 +69,71 @@ syntax on
 " dis/enable mouse (uncomment for mouse support)
 " set mouse=a
 
-set number            " show line numbers
-set relativenumber    " show relative line numbers
+" show absolute line number on the current line
+set number
+" show relative line numbers for all other lines
+set relativenumber
 
 set encoding=utf8
-set linebreak         " don't break in the middle of words
-set scrolloff=3     " number of screenlines above/below the cursor (with 999 is the cursor always in the middle)
-set sidescrolloff=5   " number of columns top left/right of cursor
+" wrap long lines at word boundaries, not mid-word
+set linebreak
+" keep cursor at least 3 lines from top/bottom edge
+set scrolloff=3
+" keep cursor at least 5 columns from left/right edge
+set sidescrolloff=5
 
 set ffs=unix,dos,mac
 
-" no swapfile, etc. //  sometimes I turn it off when it annoyes me and then I turn it on again when I want to have that semaphore
-set swapfile          " for no swapfile set noswapfile
+" keep swap file enabled (acts as a lock for concurrent edits)
+set swapfile
 set nobackup
 set nowritebackup
 
 " Tabs
 " Tabstop is about how wide a tab is defined, while softtabstop is about how
 " far the cursor moves while typing tab
-set softtabstop=2     " Indent by 2 spaces when hitting tab
+" each tab press inserts 2 spaces
+set softtabstop=2
 set tabstop=2
-set shiftwidth=2      " this is how far text is intended with << and >>
-set expandtab         " on pressing tab, insert spaces
-set smarttab          " when on, a <tab> in front of a line inserts blanks according to 'shiftwidth'
+" indent/unindent by 2 spaces with << and >>
+set shiftwidth=2
+" insert spaces instead of tab characters
+set expandtab
+" set smarttab  " redundant with expandtab
 
-set autoindent        " new lines inherit the indention from previous lines
-set nowrap            "Wrap lines
+" new lines inherit indentation from the previous line
+set autoindent
+" disable line wrapping
+set nowrap
 
 " Performance
-set updatetime=300    " Faster completion and better user experience
+" skip screen redraws during macro execution for better performance
+set lazyredraw
+" increase command and search history beyond the default of 20
+set history=1000
+" reduce delay for swap write and plugin responsiveness (ms)
+set updatetime=300
 
 " Persistent undo
-set undofile          " Enable persistent undo
-set undodir=~/.vim/undo " Directory for undo files
-set undolevels=1000   " Maximum number of changes that can be undone
-set undoreload=10000  " Maximum number of lines to save for undo on buffer reload
+" save undo history to disk so it persists across sessions
+set undofile
+" directory for undo files (created by install.sh)
+set undodir=~/.vim/undo
+" maximum number of undoable changes
+set undolevels=1000
+" maximum lines saved for undo on buffer reload
+set undoreload=10000
 
 " System clipboard integration
+" use system clipboard as the default register (if available)
 if has('clipboard')
-  set clipboard=unnamedplus " Use system clipboard for yank/paste
+  set clipboard=unnamedplus
 endif
 
 " Visual feedback
-set signcolumn=yes    " Always show sign column to avoid text shifting
+" always show the sign column to prevent layout shifts
+set signcolumn=yes
 
-" Abbreviations
-" ab vgr Viele Grüße,<CR>Ralf Allar
+" Makros
+let @p = "0ki```powershell\<Esc>jji```\<Esc>"
+let @c = "0ki```console\<Esc>jji```\<Esc>"
